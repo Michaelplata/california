@@ -6,12 +6,12 @@ db.bookings.insertMany(
     {
             name: "Michael Plata",
             email: "mplata@gmail.com",
-            status : false
+            status : "false"
         },
         {
             name: "Stefano Binando",
             email: "sbinando@gmail.com",
-            status : true
+            status : "true"
         }
     ]
 )

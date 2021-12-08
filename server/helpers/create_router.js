@@ -90,6 +90,7 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   const id = req.params.id; 
   const updatedData = req.body;
+  delete updatedData._id;
 
   collection
     .updateOne(

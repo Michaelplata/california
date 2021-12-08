@@ -19,7 +19,17 @@ const baseURL = 'http://localhost:5000/api/bookings/'
     return fetch(baseURL + id, {
       method: 'DELETE'
     })
-  }
+  },
+  
+  updateBooking(payload) {
+    return fetch(baseURL + payload._id, {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json'}
+    })
+    .then(res => res.json())
+  },
+
 }
 
 

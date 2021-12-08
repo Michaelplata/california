@@ -1,6 +1,7 @@
 // import './BookingCard.css'
+import BookingStatus from "./BookingStatus"
 
-const BookingCard = ({ booking, deleteBooking }) => {
+const BookingCard = ({ booking, deleteBooking , updateBooking}) => {
 
   const handleDeleteClick = () => {
     deleteBooking(booking._id)
@@ -10,8 +11,7 @@ const BookingCard = ({ booking, deleteBooking }) => {
     <div className="booking-card">
       <h3>Guest name: {booking.name}</h3>
       <p>Guest email: {booking.email}</p>
-      <p>Status: {booking.status}</p>
-      {/* <p>Status: {booking.status}</p> */}
+      <p>Status: <BookingStatus updateBooking={updateBooking} name={booking.name} email={booking.email} oldStatus={booking.status} _id={booking._id}/></p>
       <button 
         type="button" 
         className="delete-btn" 
